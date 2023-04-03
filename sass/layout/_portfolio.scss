@@ -1,0 +1,107 @@
+.portfolio {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.filter-buttons-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.filter-buttons-list__item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.filter-buttons-list__button {
+  font-family: inherit;
+  @include font($fw: 500, $fs: 16px, $lh: 1.6, $ls: 0.03em);
+  text-align: center;
+  background: #f5f4fa;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  padding: 6px 22px;
+  transition-property: color, box-shadow, background-color;
+  transition-duration: var(--hover-time);
+  transition-timing-function: var(--cube);
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -30px;
+  margin-top: -30px;
+}
+
+.project-list__item {
+  width: calc(100% / 3 - 30px);
+  margin-right: 30px;
+  margin-top: 30px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+}
+
+.project-list__item-effect {
+  display: block;
+  transition-duration: var(--hover-time);
+  transition-timing-function: var(--cube);
+  &:focus,
+  &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+.project-list__item-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-list__item-content {
+  position: absolute;
+  @include font($fs: 18px, $lh: 1.56, $ls: 0.03em);
+  color: #ffffff;
+  background-color: rgba(33, 150, 243, 0.9);
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 63px 24px;
+  /* or like this, width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 63px 24px; */
+  transform: translateY(100%);
+  transition-duration: var(--hover-time);
+  transition-timing-function: var(--cube);
+  .project-list__item-effect:hover &,
+  .project-list__item-effect:focus & {
+    transform: translateY(0%);
+  }
+}
+
+.project-list__item-text-placement {
+  background: #ffffff;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding: 20px 24px;
+}
+
+.project-list__item-title {
+  color: var(--primary-text-color);
+  @include font($fw: 700, $fs: 18px, $lh: 2, $ls: 0.06em);
+}
+.project-list__item-direction {
+  @include font($fs: 16px, $lh: 1.9, $ls: 0.03em);
+  color: var(--secondary-text-color);
+  margin-top: 4px;
+}
